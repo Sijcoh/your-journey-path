@@ -157,13 +157,13 @@ function Index() {
             <a href="#start" className="button-primary">Explore journeys <ArrowRight /></a>
             <a href="#builders" className="button-secondary">Build on the platform</a>
           </div>
-          <p className="hero-consent"><LockKeyhole /> Your journeys share only when you choose.</p>
+          <p className="hero-consent"><LockKeyhole /> Build each journey around your life.</p>
         </div>
         <div className="hero-canvas" aria-label="Real-life journeys connected through the platform">
           <div className="hero-image-frame"><img src={heroImage} alt="Real-life football, health, legal and product-building moments connected by a luminous path" width={1920} height={1200} /></div>
           <div className="canvas-ticket ticket-discover"><span>Discover</span><strong>Football journey</strong><i /></div>
           <div className="canvas-ticket ticket-create"><span>Create</span><strong>Journey Studio</strong><i /></div>
-          <div className="canvas-ticket ticket-connect"><span>Connect</span><strong>Only with permission</strong><ShieldCheck /></div>
+          <div className="canvas-ticket ticket-connect"><span>Connect</span><strong>Bring journeys together</strong><ShieldCheck /></div>
           <span className="canvas-index">01—04 / LIFE, CONNECTED BY CHOICE</span>
         </div>
         <a className="scroll-cue" href="#proof">See what’s possible <ArrowDownRight /></a>

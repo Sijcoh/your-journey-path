@@ -161,8 +161,8 @@ function Index() {
         </div>
         <div className="hero-canvas" aria-label="Real-life journeys connected through the platform">
           <div className="hero-image-frame"><img src={heroImage} alt="Real-life football, health, legal and product-building moments connected by a luminous path" width={1920} height={1200} /></div>
-          <div className="canvas-ticket ticket-discover"><span>Discover</span><strong>Football journey</strong><i /></div>
-          <div className="canvas-ticket ticket-create"><span>Create</span><strong>Journey Studio</strong><i /></div>
+          <div className="canvas-ticket ticket-discover"><span>Discover</span><strong>AI-led journeys</strong><i /></div>
+          <div className="canvas-ticket ticket-create"><span>Create</span><strong>Journey web &amp; app products</strong><i /></div>
           <div className="canvas-ticket ticket-connect"><span>Connect</span><strong>Bring journeys together</strong><ShieldCheck /></div>
           <span className="canvas-index">01—04 / LIFE, CONNECTED BY CHOICE</span>
         </div>

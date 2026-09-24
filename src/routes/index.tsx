@@ -6,6 +6,7 @@ import footballImage from "../assets/journey-football.jpg";
 import healthImage from "../assets/journey-health.jpg";
 import heroImage from "../assets/journey-hero.jpg";
 import lawImage from "../assets/journey-law.jpg";
+import brandLogo from "../assets/build-your-journey-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -34,10 +35,7 @@ const proofItems = ["The Journey Football", "The Journey Health", "The Journey L
 
 function BrandMark() {
   return (
-    <span className="relative grid size-8 shrink-0 place-items-center" aria-hidden="true">
-      <span className="absolute inset-1 rotate-45 border border-cyan/70" />
-      <span className="size-2 bg-lime shadow-[0_0_16px_var(--lime)]" />
-    </span>
+    <img className="brand-logo" src={brandLogo.url} alt="Build Your Journey" />
   );
 }
 
@@ -118,7 +116,7 @@ function Index() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <header className="site-header">
-        <a href="#top" className="brand" aria-label="Build Your Journey home"><BrandMark /><span>Build Your Journey</span></a>
+        <a href="#top" className="brand" aria-label="Build Your Journey home"><BrandMark /></a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#journeys">Journeys</a><a href="#life-map">Life Map</a><a href="#builders">For builders</a>
         </nav>
@@ -134,9 +132,9 @@ function Index() {
         <div className="hero-overlay" />
         <svg className="hero-path" viewBox="0 0 1440 820" aria-hidden="true"><path d="M-20 760 C180 650 285 790 470 620 S690 590 805 420 S1040 350 1120 170 S1340 160 1480 45" /></svg>
         <div className="hero-content">
-          <div className="eyebrow"><span /> A platform for life’s defining moments</div>
+          <div className="eyebrow"><span /> The AI-led web and app platform for life’s defining moments</div>
           <h1>Every goal<br />starts a <em>journey.</em></h1>
-          <p>Discover, build and connect AI-led journeys across the moments that shape your life — sharing between them only when you choose.</p>
+          <p>Discover AI-led journeys, create responsive web and app Journey products, and connect them across the moments that shape your life — sharing only when you choose.</p>
           <div className="hero-actions">
             <a href="#start" className="button-primary">Explore journeys <ArrowRight className="size-4" /></a>
             <a href="#builders" className="button-secondary">Build on the platform</a>
@@ -216,7 +214,7 @@ function Index() {
         <Reveal className="builders-lead">
           <span className="section-number">06 / FOR BUILDERS</span>
           <h2>Your specialist idea.<br /><em>A platform behind it.</em></h2>
-          <p>Journey Studio gives people and organisations the infrastructure to turn deep expertise into a trusted Journey product.</p>
+          <p>Journey Studio gives people and organisations the infrastructure to turn deep expertise into responsive AI-led web and app Journey products. Existing AI-led products can also connect to the ecosystem while keeping their identity.</p>
           <a href="#partner" className="button-primary">Bring a Journey to the platform <ArrowRight /></a>
         </Reveal>
         <Reveal className="studio-grid">
@@ -246,7 +244,7 @@ function Index() {
       </section>
 
       <footer>
-        <div className="brand"><BrandMark /><span>Build Your Journey</span></div>
+        <div className="brand"><BrandMark /></div>
         <p>Private by default. Connected only with your permission.</p>
         <a href="#top">Back to top ↑</a>
       </footer>

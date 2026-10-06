@@ -1,7 +1,7 @@
 """Live checks for explicit, reversible My Life Map permission and the route preview."""
 import asyncio
 from pathlib import Path
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, expect
 
 OUTPUT = Path('/tmp/browser/restored-release')
 
@@ -25,7 +25,7 @@ async def main():
             assert await toggle.get_attribute('aria-pressed') == 'false', 'Permission must be reversible'
             await page.locator('#goal').fill('Help my family understand our next health appointment')
             await page.get_by_role('button', name='Create guided route').click()
-            assert await page.locator('.route-head').inner_text() == 'Your first route'
+            await expect(page.locator('.route-head')).to_have_text('Your first route')
             assert await page.locator('.route-step').count() == 3
             for section in ['start', 'life-map', 'journeys', 'builders', 'partner', 'close']:
                 await page.locator(f'#{section}').scroll_into_view_if_needed()

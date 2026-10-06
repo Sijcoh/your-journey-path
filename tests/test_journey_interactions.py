@@ -16,7 +16,7 @@ async def main():
             await page.goto('http://localhost:8080', wait_until='networkidle')
             assert await page.title() == 'Build Your Journey — Discover, create and connect AI-led journeys'
             await page.screenshot(path=str(OUTPUT / f'{name}-hero.png'))
-            toggle = page.get_by_role('button', name='Connect with permission', exact=True)
+            toggle = page.locator('.permission-toggle')
             assert await toggle.get_attribute('aria-pressed') == 'false', 'Connections must start off'
             assert await page.locator('.map-core strong').inner_text() == 'My Life Map'
             await toggle.click()

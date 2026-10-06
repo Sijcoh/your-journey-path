@@ -12,4 +12,4 @@
 - [x] Preserve product truth, consent interactions, proof verticals, approved logo and two audience routes
 - [x] Verify the new desktop and mobile experience end to end
 - [x] Faithfully polish the current approved Platform Canvas, retain imagery, and reflect the explicit product brief without guessing private content
-- [ ] Visually verify desktop and phone; check My Life Map permission and route-builder interactions; do not publish
+- [x] Visually verify desktop and phone; check My Life Map permission and route-builder interactions; do not publish

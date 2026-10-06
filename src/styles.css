@@ -358,8 +358,8 @@ footer { padding-top: 5rem; border-top: 0; }
 .cml-step i { width: 8px; height: 8px; background: var(--cyan); transform: rotate(45deg); }
 .is-connected .cml-step { opacity: 1; }
 .is-connected .cml-step i { box-shadow: 0 0 10px var(--cyan); }
-.step-health { left: 7%; top: 22%; } .step-travel { left: 47%; top: 45%; } .step-travel i { background: var(--lime); box-shadow: 0 0 10px var(--lime); }
-.step-home { right: 5%; top: 74%; } .step-home i { background: var(--coral); box-shadow: 0 0 10px var(--coral); }
+.step-health { left: 7%; top: 22%; } .step-travel { left: 47%; top: 45%; } .step-travel i { background: var(--lime); } .is-connected .step-travel i { box-shadow: 0 0 10px var(--lime); }
+.step-home { right: 5%; top: 74%; } .step-home i { background: var(--coral); } .is-connected .step-home i { box-shadow: 0 0 10px var(--coral); }
 .is-connected .step-travel { transition-delay: .15s; } .is-connected .step-home { transition-delay: .3s; }
 .cml-strip { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.75rem; padding: 1rem 1.25rem; border-top: var(--edge); color: var(--foreground); font: 600 .58rem var(--font-mono); text-transform: uppercase; letter-spacing: .05em; }
 .cml-strip > span { display: flex; align-items: center; gap: .5rem; }

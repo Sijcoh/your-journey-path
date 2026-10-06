@@ -227,6 +227,13 @@ footer { min-height: 120px; display: flex; align-items: center; justify-content:
   .partner-visual { padding: 1rem; }.closing-intro { padding: 6rem 1rem 3rem; }.closing-intro h2 { font-size: clamp(3.4rem, 16vw, 5rem); }.closing-routes { grid-template-columns: 1fr; }.closing-routes a { min-height: 250px; padding: 2rem 1rem; border-right: 0; border-bottom: 1px solid var(--foreground); }.closing-routes a:last-child { border-bottom: 0; }.closing-routes svg { right: 1rem; top: 2rem; }.closing-routes strong { font-size: clamp(2rem, 9vw, 3rem); }footer { flex-direction: column; align-items: flex-start; }
 }
 
+@media (max-width: 720px) {
+  .hero-section { padding-top: 7rem; }
+  .hero-copy h1 { font-size: 3rem; }
+  .goal-story h2, .map-intro h2, .builders-lead h2, .partner-copy h2, .journey-copy h2 { font-size: 2.5rem; overflow-wrap: normal; }
+  .journey-copy { min-height: 500px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }.hero-route path, .builder-path path, .map-line { animation: none !important; }.reveal { opacity: 1; transform: none; transition: none; }.media-stage > img, .button-primary, .button-secondary { transition: none; }
 }

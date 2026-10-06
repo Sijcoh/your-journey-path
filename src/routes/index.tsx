@@ -34,12 +34,6 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const journeyNodes = [
-  { name: "Football", className: "node-football", accent: "bg-cyan" },
-  { name: "Health", className: "node-health", accent: "bg-lime" },
-  { name: "Law", className: "node-law", accent: "bg-coral" },
-  { name: "Complaints", className: "node-complaints", accent: "bg-foreground" },
-];
 
 const proofItems = ["The Journey Football", "The Journey Health", "The Journey Law", "Complaints"];
 
@@ -69,37 +63,30 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
 
 function LifeMap() {
   const [connected, setConnected] = useState(false);
+  const steps = [["Health changes", "step-health"], ["Travel adapts", "step-travel"], ["Home options surface", "step-home"]];
 
   return (
-    <div className={`life-map ${connected ? "is-connected" : ""}`}>
-      <svg className="map-lines" viewBox="0 0 900 560" aria-hidden="true">
-        <path className="map-line line-cyan" d="M116 115 C275 85 320 245 450 280" />
-        <path className="map-line line-lime" d="M784 115 C625 85 580 245 450 280" />
-        <path className="map-line line-coral" d="M116 445 C275 475 320 315 450 280" />
-        <path className="map-line line-navy" d="M784 445 C625 475 580 315 450 280" />
-      </svg>
-      <div className="map-orbit orbit-one" />
-      <div className="map-orbit orbit-two" />
-      <div className="map-core">
-        <ShieldCheck />
-        <strong>{connected ? "Connected by you" : "Connect My Life"}</strong>
-        <span>{connected ? "Permission active" : "Private by default"}</span>
+    <div className={`cml ${connected ? "is-connected" : ""}`}>
+      <div className="cml-visual">
+        <figure className="cml-shot shot-health"><img src={healthImage} alt="" loading="lazy" /><figcaption>Health</figcaption></figure>
+        <figure className="cml-shot shot-family"><img src={heroImage} alt="" loading="lazy" /><figcaption>Family</figcaption></figure>
+        <figure className="cml-shot shot-finance"><img src={lawImage} alt="" loading="lazy" /><figcaption>Finance</figcaption></figure>
+        <figure className="cml-shot shot-travel"><img src={footballImage} alt="" loading="lazy" /><figcaption>Travel</figcaption></figure>
+        <figure className="cml-shot shot-home"><img src={heroImage} alt="" loading="lazy" /><figcaption>Home</figcaption></figure>
+        <svg className="cml-path" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M70 120 C200 60 260 250 330 215 S470 300 545 330" />
+        </svg>
+        {steps.map(([label, cls]) => <span className={`cml-step ${cls}`} key={label}><i />{label}</span>)}
       </div>
-      {journeyNodes.map((node) => (
-        <div className={`map-node ${node.className}`} key={node.name}>
-          <span className={`node-light ${node.accent}`} />
-          <span>{node.name}</span>
-        </div>
-      ))}
-      <button
-        type="button"
-        className="permission-toggle"
-        aria-pressed={connected}
-        onClick={() => setConnected((value) => !value)}
-      >
-        <span className="toggle-track"><span className="toggle-thumb" /></span>
-        <span>{connected ? "Connected — switch off" : "Connect with permission"}</span>
-      </button>
+      <div className="cml-strip">
+        <span><LockKeyhole /> Private by default</span>
+        <span><ShieldCheck /> Only with permission</span>
+        <span><Link2 /> Disconnect anytime</span>
+        <button type="button" className="permission-toggle" aria-pressed={connected} onClick={() => setConnected((v) => !v)}>
+          <span className="toggle-track"><span className="toggle-thumb" /></span>
+          <span className="toggle-label">{connected ? "Connected — switch off" : "Connect with permission"}</span>
+        </button>
+      </div>
     </div>
   );
 }
@@ -203,12 +190,21 @@ function Index() {
         </Reveal>
       </section>
 
+      <section id="connect-my-life" className="cml-section">
+        <Reveal className="cml-copy">
+          <span className="section-number">02 / CONNECT MY LIFE</span>
+          <h2>Your life.<br />Working together.</h2>
+          <p>Choose the journeys that matter. Connect My Life helps them respond to change—only with your permission.</p>
+        </Reveal>
+        <Reveal className="cml-visual-wrap"><LifeMap /></Reveal>
+      </section>
+
       <section id="journeys" className="journeys-section">
-        <div className="journey-section-head"><span>02—04 / JOURNEYS IN REAL LIFE</span><p>Not categories. Complete routes through the moments that matter.</p></div>
+        <div className="journey-section-head"><span>03—05 / JOURNEYS IN REAL LIFE</span><p>Not categories. Complete routes through the moments that matter.</p></div>
         <article className="journey-story story-football">
           <MediaStage image={footballImage} title="The Journey Football" accent="cyan" />
           <Reveal className="journey-copy">
-            <span className="story-number">02 / FOOTBALL</span>
+            <span className="story-number">03 / FOOTBALL</span>
             <h2>The game is only<br />part of the <em>story.</em></h2>
             <p>Opportunities, development, wellbeing and safeguarding. Support for the whole family around the player.</p>
             <a href="#close">Explore Football <ArrowRight /></a>
@@ -218,7 +214,7 @@ function Index() {
         <article className="journey-story story-health">
           <MediaStage image={healthImage} title="The Journey Health" accent="lime" />
           <Reveal className="journey-copy">
-            <span className="story-number">03 / HEALTH</span>
+            <span className="story-number">04 / HEALTH</span>
             <h2>Clarity for the<br /><em>next conversation.</em></h2>
             <p>Focused questions, organised evidence and safer next steps. It supports decisions; it never replaces a doctor.</p>
             <a href="#close">Explore Health <ArrowRight /></a>
@@ -228,7 +224,7 @@ function Index() {
         <article className="journey-story story-law">
           <MediaStage image={lawImage} title="The Journey Law" accent="coral" />
           <Reveal className="journey-copy">
-            <span className="story-number">04 / LAW</span>
+            <span className="story-number">05 / LAW</span>
             <h2>Make the complex<br /><em>navigable.</em></h2>
             <p>Documents, deadlines and the right professional support. It never replaces a lawyer.</p>
             <a href="#close">Explore Law <ArrowRight /></a>
@@ -240,7 +236,7 @@ function Index() {
       <section id="builders" className="builders-section">
         <svg className="builder-path" viewBox="0 0 1200 720" aria-hidden="true"><path d="M-50 590 C250 620 180 220 485 335 S800 600 930 260 S1120 110 1260 170" /></svg>
         <Reveal className="builders-lead">
-          <span className="section-number">05 / CREATE WITH JOURNEY STUDIO</span>
+          <span className="section-number">06 / CREATE WITH JOURNEY STUDIO</span>
           <h2>Expertise becomes<br />a <em>Journey product.</em></h2>
           <p>Reusable architecture for quickly creating affordable AI-guided websites and apps—from a focused testbed to a standalone product.</p>
           <a href="#partner" className="button-primary">Build with Journey Studio <ArrowRight /></a>
@@ -256,7 +252,7 @@ function Index() {
 
       <section id="partner" className="partner-section">
         <Reveal className="partner-copy">
-          <span className="section-number">06 / ALREADY BUILT SOMETHING?</span>
+          <span className="section-number">07 / ALREADY BUILT SOMETHING?</span>
           <h2>Bring your product.<br /><em>Keep its identity.</em></h2>
           <p>Bring an existing product into the Journey ecosystem without losing its identity. Connect My Life remains optional.</p>
         </Reveal>
@@ -266,18 +262,6 @@ function Index() {
           <div className="ecosystem-tile"><span>BUILD YOUR JOURNEY</span><strong>Discoverable. Connectable.</strong></div>
           <p><ShieldCheck /> No forced data sharing. No loss of product identity.</p>
         </Reveal>
-      </section>
-
-      <section id="connect-my-life" className="life-map-section">
-        <Reveal className="map-intro">
-          <span className="section-number">07 / CONNECT MY LIFE</span>
-          <h2>Many journeys.<br /><em>One life.</em></h2>
-          <div><p>Choose what matters—health, family, finance, travel and more. Connect selected journeys for smarter suggestions across your life.</p></div>
-        </Reveal>
-        <Reveal><LifeMap /></Reveal>
-        <div className="trust-row">
-          <span><LockKeyhole /> Private by default</span><span><ShieldCheck /> Only with permission</span><span><Link2 /> Disconnect anytime</span>
-        </div>
       </section>
 
       <section id="close" className="closing-section">

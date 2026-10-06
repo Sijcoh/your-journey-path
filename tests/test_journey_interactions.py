@@ -18,7 +18,7 @@ async def main():
             await page.screenshot(path=str(OUTPUT / f'{name}-hero.png'))
             toggle = page.locator('.permission-toggle')
             assert await toggle.get_attribute('aria-pressed') == 'false', 'Connections must start off'
-            assert await page.locator('.map-core strong').inner_text() == 'Connect My Life'
+            assert ' '.join((await page.locator('.map-core strong').inner_text()).split()) == 'Connect My Life'
             await toggle.click()
             assert await toggle.get_attribute('aria-pressed') == 'true', 'Explicit permission must activate connections'
             await toggle.click()

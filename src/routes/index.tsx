@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Build Your Journey — Discover, create and connect AI-led journeys" },
-      { name: "description", content: "Discover AI-led journeys and create low-cost websites and apps with Journey Studio. Keep Journey products independent or connect them through My Life Map with explicit, reversible permission." },
+      { name: "description", content: "Turn an idea, service or life need into an affordable AI-guided website or app. Every product works on its own; Connect My Life lets you choose which journeys work together, with explicit, reversible permission." },
       { property: "og:title", content: "Build Your Journey" },
       { property: "og:description", content: "The AI-led web and app platform for discovering, creating and connecting life’s journeys." },
       { property: "og:type", content: "website" },
@@ -82,7 +82,7 @@ function LifeMap() {
       <div className="map-orbit orbit-two" />
       <div className="map-core">
         <ShieldCheck />
-        <strong>{connected ? "Connected by you" : "My Life Map"}</strong>
+        <strong>{connected ? "Connected by you" : "Connect My Life"}</strong>
         <span>{connected ? "Permission active" : "Private by default"}</span>
       </div>
       {journeyNodes.map((node) => (
@@ -129,7 +129,7 @@ function Index() {
       <header className="site-header">
         <a href="#top" className="brand" aria-label="Build Your Journey home"><BrandMark /></a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#start">How it works</a><a href="#life-map">My Life Map</a><a href="#journeys">Journeys</a><a href="#builders">For builders</a>
+          <a href="#start">How it works</a><a href="#connect-my-life">Connect My Life</a><a href="#journeys">Journeys</a><a href="#builders">For builders</a>
         </nav>
         <a href="#close" className="nav-cta">Find your way in <ArrowDownRight /></a>
         <button type="button" className="menu-button" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen} aria-label="Toggle navigation">
@@ -138,7 +138,7 @@ function Index() {
         {menuOpen && (
           <nav className="mobile-nav">
             <a onClick={() => setMenuOpen(false)} href="#start">How it works</a>
-            <a onClick={() => setMenuOpen(false)} href="#life-map">My Life Map</a>
+            <a onClick={() => setMenuOpen(false)} href="#connect-my-life">Connect My Life</a>
             <a onClick={() => setMenuOpen(false)} href="#journeys">Journeys</a>
             <a onClick={() => setMenuOpen(false)} href="#builders">For builders</a>
           </nav>
@@ -152,7 +152,7 @@ function Index() {
         <div className="hero-copy">
           <div className="eyebrow"><span /> Discover it. Build it. Connect it.</div>
           <h1>Every goal<br />starts a <em>journey.</em></h1>
-          <p>Build Your Journey is the AI-led web and app platform for turning a goal, problem or life event into a guided journey — discovered, created and connected around real life.</p>
+          <p>Turn any idea, service or life need into an affordable AI-guided website or app. Each works alone. Connect My Life brings the journeys you choose together.</p>
           <div className="hero-actions">
             <a href="#start" className="button-primary">Explore journeys <ArrowRight /></a>
             <a href="#builders" className="button-secondary">Build on the platform</a>
@@ -181,7 +181,7 @@ function Index() {
           <span className="section-number">01 / START WITH NOW</span>
           <p className="story-kicker">One honest starting point.</p>
           <h2>Tell us what<br /><em>matters now.</em></h2>
-          <p>Bring a goal, a problem or a life event. The platform turns it into a useful sequence of questions, evidence, decisions and next steps.</p>
+          <p>Bring a goal, problem or life event. Get clear questions and next steps.</p>
         </Reveal>
         <Reveal className="goal-builder">
           <div className="goal-input-wrap">
@@ -203,26 +203,14 @@ function Index() {
         </Reveal>
       </section>
 
-      <section id="life-map" className="life-map-section">
-        <Reveal className="map-intro">
-          <span className="section-number">02 / MY LIFE MAP</span>
-          <h2>Many journeys.<br /><em>One life.</em></h2>
-          <div><p>Football can stay Football. Health can stay Health. Law can stay Law. Each Journey product remains independent.</p><p>My Life Map is optional. Journeys connect only with your explicit permission. You decide what joins up — and you can reverse it.</p></div>
-        </Reveal>
-        <Reveal><LifeMap /></Reveal>
-        <div className="trust-row">
-          <span><LockKeyhole /> Private by default</span><span><ShieldCheck /> Explicit permission</span><span><Link2 /> Reversible connections</span>
-        </div>
-      </section>
-
       <section id="journeys" className="journeys-section">
-        <div className="journey-section-head"><span>03—05 / JOURNEYS IN REAL LIFE</span><p>Not categories. Complete routes through the moments that matter.</p></div>
+        <div className="journey-section-head"><span>02—04 / JOURNEYS IN REAL LIFE</span><p>Not categories. Complete routes through the moments that matter.</p></div>
         <article className="journey-story story-football">
           <MediaStage image={footballImage} title="The Journey Football" accent="cyan" />
           <Reveal className="journey-copy">
-            <span className="story-number">03 / FOOTBALL</span>
+            <span className="story-number">02 / FOOTBALL</span>
             <h2>The game is only<br />part of the <em>story.</em></h2>
-            <p>Navigate opportunities, development, wellbeing and safeguarding — while supporting the whole family around the player.</p>
+            <p>Opportunities, development, wellbeing and safeguarding. Support for the whole family around the player.</p>
             <a href="#close">Explore Football <ArrowRight /></a>
           </Reveal>
           <span className="story-word">PLAY</span>
@@ -230,9 +218,9 @@ function Index() {
         <article className="journey-story story-health">
           <MediaStage image={healthImage} title="The Journey Health" accent="lime" />
           <Reveal className="journey-copy">
-            <span className="story-number">04 / HEALTH</span>
+            <span className="story-number">03 / HEALTH</span>
             <h2>Clarity for the<br /><em>next conversation.</em></h2>
-            <p>Turn a confusing health situation into focused questions, organised evidence and safer next steps. It supports decisions; it never replaces a doctor.</p>
+            <p>Focused questions, organised evidence and safer next steps. It supports decisions; it never replaces a doctor.</p>
             <a href="#close">Explore Health <ArrowRight /></a>
           </Reveal>
           <span className="story-word">CLARITY</span>
@@ -240,9 +228,9 @@ function Index() {
         <article className="journey-story story-law">
           <MediaStage image={lawImage} title="The Journey Law" accent="coral" />
           <Reveal className="journey-copy">
-            <span className="story-number">05 / LAW</span>
+            <span className="story-number">04 / LAW</span>
             <h2>Make the complex<br /><em>navigable.</em></h2>
-            <p>Organise a legal problem into a guided route through documents, deadlines and appropriate professional support. It never replaces a lawyer.</p>
+            <p>Documents, deadlines and the right professional support. It never replaces a lawyer.</p>
             <a href="#close">Explore Law <ArrowRight /></a>
           </Reveal>
           <span className="story-word">ORDER</span>
@@ -252,9 +240,9 @@ function Index() {
       <section id="builders" className="builders-section">
         <svg className="builder-path" viewBox="0 0 1200 720" aria-hidden="true"><path d="M-50 590 C250 620 180 220 485 335 S800 600 930 260 S1120 110 1260 170" /></svg>
         <Reveal className="builders-lead">
-          <span className="section-number">06 / THE OTHER SIDE OF THE PLATFORM</span>
+          <span className="section-number">05 / CREATE WITH JOURNEY STUDIO</span>
           <h2>Expertise becomes<br />a <em>Journey product.</em></h2>
-          <p>Journey Studio gives people and organisations shared architecture for low-cost AI-led website and app creation. Turn deep expertise into a standalone Journey product or a testbed — with My Life Map connections entirely optional.</p>
+          <p>Reusable architecture for quickly creating affordable AI-guided websites and apps—from a focused testbed to a standalone product.</p>
           <a href="#partner" className="button-primary">Build with Journey Studio <ArrowRight /></a>
         </Reveal>
         <Reveal className="studio-system">
@@ -268,9 +256,9 @@ function Index() {
 
       <section id="partner" className="partner-section">
         <Reveal className="partner-copy">
-          <span className="section-number">07 / ALREADY BUILT SOMETHING BRILLIANT?</span>
+          <span className="section-number">06 / ALREADY BUILT SOMETHING?</span>
           <h2>Bring your product.<br /><em>Keep its identity.</em></h2>
-          <p>Existing AI-led web and app products can become discoverable through a trusted home for journeys, then connect to My Life Map only where it adds value — and only with the user’s explicit, reversible permission.</p>
+          <p>Bring an existing product into the Journey ecosystem without losing its identity. Connect My Life remains optional.</p>
         </Reveal>
         <Reveal className="partner-visual">
           <div className="product-tile"><span>YOUR PRODUCT</span><strong>Already built</strong></div>
@@ -278,6 +266,18 @@ function Index() {
           <div className="ecosystem-tile"><span>BUILD YOUR JOURNEY</span><strong>Discoverable. Connectable.</strong></div>
           <p><ShieldCheck /> No forced data sharing. No loss of product identity.</p>
         </Reveal>
+      </section>
+
+      <section id="connect-my-life" className="life-map-section">
+        <Reveal className="map-intro">
+          <span className="section-number">07 / CONNECT MY LIFE</span>
+          <h2>Many journeys.<br /><em>One life.</em></h2>
+          <div><p>Choose what matters—health, family, finance, travel and more. Connect selected journeys for smarter suggestions across your life.</p></div>
+        </Reveal>
+        <Reveal><LifeMap /></Reveal>
+        <div className="trust-row">
+          <span><LockKeyhole /> Private by default</span><span><ShieldCheck /> Only with permission</span><span><Link2 /> Disconnect anytime</span>
+        </div>
       </section>
 
       <section id="close" className="closing-section">

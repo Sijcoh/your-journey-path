@@ -1,4 +1,4 @@
-"""Live checks for explicit, reversible My Life Map permission and the route preview."""
+"""Live checks for explicit, reversible Connect My Life permission and the route preview."""
 import asyncio
 from pathlib import Path
 from playwright.async_api import async_playwright, expect
@@ -18,7 +18,7 @@ async def main():
             await page.screenshot(path=str(OUTPUT / f'{name}-hero.png'))
             toggle = page.locator('.permission-toggle')
             assert await toggle.get_attribute('aria-pressed') == 'false', 'Connections must start off'
-            assert await page.locator('.map-core strong').inner_text() == 'My Life Map'
+            assert ' '.join((await page.locator('.map-core strong').inner_text()).split()) == 'Connect My Life'
             await toggle.click()
             assert await toggle.get_attribute('aria-pressed') == 'true', 'Explicit permission must activate connections'
             await toggle.click()
@@ -27,7 +27,7 @@ async def main():
             await page.get_by_role('button', name='Create guided route').click()
             await expect(page.locator('.route-head')).to_have_text('Your first route')
             assert await page.locator('.route-step').count() == 3
-            for section in ['start', 'life-map', 'journeys', 'builders', 'partner', 'close']:
+            for section in ['start', 'connect-my-life', 'journeys', 'builders', 'partner', 'close']:
                 await page.locator(f'#{section}').scroll_into_view_if_needed()
                 await page.wait_for_timeout(850)
                 await page.screenshot(path=str(OUTPUT / f'{name}-{section}.png'))
@@ -38,12 +38,12 @@ async def main():
             assert await page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'), 'Page must fit the viewport'
             if name == 'phone':
                 await page.get_by_role('button', name='Toggle navigation').click()
-                await page.locator('.mobile-nav').get_by_role('link', name='My Life Map').click()
+                await page.locator('.mobile-nav').get_by_role('link', name='Connect My Life').click()
                 assert await page.locator('.mobile-nav').count() == 0
             else:
-                await page.locator('.desktop-nav').get_by_role('link', name='My Life Map').click()
+                await page.locator('.desktop-nav').get_by_role('link', name='Connect My Life').click()
             await page.wait_for_timeout(800)
-            assert page.url.endswith('#life-map')
+            assert page.url.endswith('#connect-my-life')
             print(f'{name}: permission defaults, consent, reversal, route preview, navigation, images and viewport passed')
         assert not errors, errors
         await browser.close()

@@ -208,6 +208,8 @@ footer { min-height: 120px; display: flex; align-items: center; justify-content:
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s cubic-bezier(.22, 1, .36, 1); }.reveal.is-visible { opacity: 1; transform: none; }
 @keyframes route-flow { to { stroke-dashoffset: -132; } }
 
+.story-health h2 { font-size: 2.75rem; overflow-wrap: normal; }
+
 @media (max-width: 1100px) {
   .desktop-nav, .nav-cta { display: none; }.site-header { grid-template-columns: 1fr auto; }.menu-button { display: grid; place-items: center; border: 0; background: transparent; }.mobile-nav { position: absolute; display: flex; flex-direction: column; gap: 1rem; top: 76px; left: 0; right: 0; padding: 1.5rem; background: var(--background); border-bottom: 1px solid var(--border); }
   .hero-section { grid-template-columns: 1fr; padding-top: 8rem; }.hero-copy { padding-bottom: 0; }.hero-canvas { min-height: 690px; margin-top: -2rem; }.hero-image-frame { left: 9%; }.scroll-cue { display: none; }
@@ -232,6 +234,7 @@ footer { min-height: 120px; display: flex; align-items: center; justify-content:
   .hero-copy h1 { font-size: 3rem; }
   .goal-story h2, .map-intro h2, .builders-lead h2, .partner-copy h2, .journey-copy h2 { font-size: 2.5rem; overflow-wrap: normal; }
   .journey-copy { min-height: 500px; }
+  .studio-node:nth-of-type(4), .studio-node:nth-of-type(7) { top: 24%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

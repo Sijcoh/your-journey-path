@@ -194,7 +194,7 @@ function Index() {
         <div id="connect-my-life" className="cml-inner">
           <Reveal className="cml-copy">
             <span className="section-number">02 / CONNECT MY LIFE</span>
-            <h2 id="connect-my-life-title">Your life.<br />Working together.</h2>
+            <h2 id="connect-my-life-title">Connect My Life</h2>
             <p>Choose the journeys that matter. Connect My Life helps them respond to change—only with your permission.</p>
           </Reveal>
           <Reveal className="cml-visual-wrap"><LifeMap /></Reveal>

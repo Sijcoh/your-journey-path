@@ -240,3 +240,96 @@ footer { min-height: 120px; display: flex; align-items: center; justify-content:
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }.hero-route path, .builder-path path, .map-line { animation: none !important; }.reveal { opacity: 1; transform: none; transition: none; }.media-stage > img, .button-primary, .button-secondary { transition: none; }
 }
+/* ===== Cohesion system: one palette, one grid, one continuous path ===== */
+:root { --content-max: 1280px; --gutter: max(1.5rem, calc((100% - var(--content-max)) / 2)); --section-pad: clamp(6rem, 9vw, 9rem); --h2-size: clamp(2.8rem, 4.6vw, 4rem); --body-max: 34rem; --edge: 1px solid var(--border); --lift: 0 24px 60px -28px color-mix(in oklab, var(--navy) 35%, transparent); }
+
+/* shared section frame + flowing thread */
+.goal-section, .journeys-section, .builders-section, .partner-section, .life-map-section, .closing-section { position: relative; isolation: isolate; }
+.goal-section, .builders-section, .partner-section, .life-map-section { padding: var(--section-pad) var(--gutter); }
+.goal-section::after, .journeys-section::after, .builders-section::after, .partner-section::after, .life-map-section::after, .closing-section::after {
+  content: ""; position: absolute; z-index: 4; top: 0; left: calc(var(--gutter) + 5px); width: 2px; height: clamp(3rem, 5vw, 4.5rem);
+  background: repeating-linear-gradient(180deg, var(--cyan) 0 8px, transparent 8px 20px); filter: drop-shadow(0 0 6px var(--cyan)); pointer-events: none; }
+.goal-section .section-number::before, .builders-lead .section-number::before, .partner-copy .section-number::before, .map-intro .section-number::before, .journey-section-head span::before, .closing-intro > span::before {
+  content: ""; width: 10px; height: 10px; flex: none; background: var(--cyan); transform: rotate(45deg); box-shadow: 0 0 14px var(--cyan); }
+.builders-lead .section-number::before { background: var(--lime); box-shadow: 0 0 14px var(--lime); }
+.map-intro .section-number::before { background: var(--coral); box-shadow: 0 0 14px var(--coral); }
+
+/* eyebrows, headings, paragraphs */
+.section-number, .journey-section-head span, .closing-intro > span, .story-number { display: flex; align-items: center; gap: .7rem; color: var(--foreground) !important; font: 600 .64rem var(--font-mono); text-transform: uppercase; letter-spacing: .04em; }
+.closing-intro > span { justify-content: center; }
+.goal-story h2, .map-intro h2, .builders-lead h2, .partner-copy h2, .journey-copy h2 { font-size: var(--h2-size); line-height: .98; }
+.story-health h2 { font-size: var(--h2-size); }
+.goal-story h2 em, .map-intro h2 em, .builders-lead h2 em, .partner-copy h2 em, .journey-copy h2 em, .closing-intro h2 em { -webkit-text-stroke-color: var(--cyan); }
+.goal-story > p:last-child, .builders-lead > p, .partner-copy > p, .journey-copy > p, .map-intro div p { max-width: var(--body-max); color: var(--muted-foreground); font-size: 1.08rem; line-height: 1.6; }
+.story-kicker { margin-top: 2.5rem; }
+
+/* one surface language: sharp corners, hairline edge, soft lift */
+.goal-builder, .life-map, .studio-system, .partner-visual, .product-tile, .ecosystem-tile, .canvas-ticket, .map-node, .map-core, .studio-node, .studio-core { border-radius: 0; border: var(--edge); box-shadow: var(--lift); }
+.map-core { border-color: var(--foreground); box-shadow: 10px 10px 0 var(--cyan); }
+
+/* palette: retire the navy and coral section floods; navy stays for type, buttons and the toggle */
+.goal-section { background: linear-gradient(180deg, var(--warm-white), var(--sky) 38%); }
+.goal-section::before { color: color-mix(in oklab, var(--cyan) 8%, transparent); }
+.proof-strip { background: var(--warm-white); color: var(--foreground); border-top: var(--edge); border-bottom: var(--edge); padding: 0 var(--gutter); }
+.proof-label, .proof-strip a { border-right: var(--edge); }
+.proof-strip a:first-of-type { border-left: var(--edge); }
+.proof-label { color: var(--foreground); }
+.proof-strip a:hover { color: var(--foreground); }
+.proof-strip a:nth-of-type(3):hover { background: color-mix(in oklab, var(--coral) 70%, var(--warm-white)); }
+
+.journeys-section { background: var(--sky); }
+.journey-section-head { padding: 3rem var(--gutter) 2.5rem; border: 0; min-height: 0; }
+.journey-story, .story-health { background: transparent; border: 0; min-height: 0; margin: 0 var(--gutter) clamp(2.5rem, 4vw, 4rem); grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); overflow: visible; }
+.story-health { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+.journey-story::after { display: none; }
+.media-stage { min-height: 0; aspect-ratio: 4 / 3; border: var(--edge); box-shadow: var(--lift); }
+.media-stage > img { filter: saturate(1.06) contrast(1.03) brightness(1.03); }
+.media-stage::after { background: linear-gradient(0deg, color-mix(in oklab, var(--navy) 30%, transparent), transparent 34%), linear-gradient(135deg, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 55%); }
+.journey-copy, .story-health .journey-copy { background: var(--warm-white); border: var(--edge); border-left: 0; padding: clamp(2.5rem, 5vw, 5rem); margin: clamp(2rem, 4vw, 4rem) 0; box-shadow: var(--lift); }
+.story-health .journey-copy { border-left: var(--edge); border-right: 0; }
+.story-word { -webkit-text-stroke: 1px color-mix(in oklab, var(--cyan) 30%, transparent); }
+
+.builders-section { background: linear-gradient(180deg, var(--sky), var(--warm-white)); color: var(--foreground); --border: oklch(0.26 0.075 253 / 18%); --muted-foreground: oklch(0.45 0.06 250); --focus-outline: var(--foreground); }
+.builder-path { opacity: .5; }
+.builders-lead .button-primary { background: var(--foreground); color: var(--background); }
+.studio-system { background: color-mix(in oklab, var(--sky) 70%, var(--warm-white)); }
+.studio-node { background: var(--warm-white); }
+.studio-core { background: var(--foreground); color: var(--background); border-color: var(--foreground); box-shadow: 10px 10px 0 var(--lime); }
+.studio-core span { color: var(--lime); }
+
+.partner-section { background: var(--warm-white); border-top: var(--edge); }
+.partner-copy > p { color: var(--muted-foreground); }
+.partner-visual { background: var(--sky); border-color: var(--border); }
+.product-tile { background: var(--warm-white); border-color: var(--border); }
+.product-tile span { color: var(--coral); }
+.join-line i { background: repeating-linear-gradient(90deg, var(--cyan) 0 8px, transparent 8px 16px); height: 2px; }
+.join-line svg { color: var(--cyan); }
+
+/* Connect My Life: the culmination — all journey colours meet here */
+.life-map-section { background: radial-gradient(60% 50% at 50% 62%, color-mix(in oklab, var(--cyan) 14%, transparent), transparent 70%), linear-gradient(180deg, var(--warm-white), var(--sky)); }
+.map-intro div { border-left: 0; padding-left: 0; }
+.life-map { margin-top: 3.5rem; max-width: none; background-color: var(--warm-white); }
+.trust-row { gap: .75rem; margin-top: 1.75rem; }
+.trust-row span { padding: .6rem .9rem; border: var(--edge); background: var(--warm-white); color: var(--foreground); }
+.closing-section { background: var(--sky); }
+.closing-routes { margin: 0 var(--gutter); border: var(--edge); background: var(--warm-white); box-shadow: var(--lift); transform: translateY(3rem); }
+.closing-routes a { border-right: var(--edge); }
+footer { padding-top: 5rem; border-top: 0; }
+
+@media (max-width: 1100px) {
+  .journey-story, .story-health { grid-template-columns: 1fr; }
+  .story-health .media-stage { grid-row: 1; }
+  .journey-copy, .story-health .journey-copy { margin: -3rem 1.25rem 0; border: var(--edge); min-height: 0; }
+}
+@media (max-width: 720px) {
+  .goal-section, .builders-section, .partner-section, .life-map-section { padding: 5rem 1rem; }
+  .goal-section::after, .journeys-section::after, .builders-section::after, .partner-section::after, .life-map-section::after, .closing-section::after { left: calc(1rem + 5px); }
+  .journey-section-head { flex-direction: column; align-items: flex-start; padding: 3rem 1rem 2rem; gap: 1rem; }
+  .journey-story, .story-health { margin: 0 1rem 2.5rem; }
+  .journey-copy, .story-health .journey-copy { margin: -2rem .75rem 0; padding: 2rem 1.5rem; }
+  .media-stage { aspect-ratio: 4 / 3.4; }
+  .proof-strip { padding: 0; }
+  .proof-strip a:first-of-type { border-left: 0; }
+  .closing-routes { margin: 0 1rem; grid-template-columns: 1fr; transform: translateY(2rem); }
+  .closing-routes a { border-right: 0; border-bottom: var(--edge); min-height: 220px; }
+}

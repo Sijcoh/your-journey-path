@@ -53,7 +53,7 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
         setVisible(true);
         observer.disconnect();
       }
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: "0px 0px 15% 0px" });
     observer.observe(element);
     return () => observer.disconnect();
   }, []);

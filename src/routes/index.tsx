@@ -190,13 +190,15 @@ function Index() {
         </Reveal>
       </section>
 
-      <section id="connect-my-life" className="cml-section">
-        <Reveal className="cml-copy">
-          <span className="section-number">02 / CONNECT MY LIFE</span>
-          <h2>Your life.<br />Working together.</h2>
-          <p>Choose the journeys that matter. Connect My Life helps them respond to change—only with your permission.</p>
-        </Reveal>
-        <Reveal className="cml-visual-wrap"><LifeMap /></Reveal>
+      <section className="cml-section" aria-labelledby="connect-my-life-title">
+        <div id="connect-my-life" className="cml-inner">
+          <Reveal className="cml-copy">
+            <span className="section-number">02 / CONNECT MY LIFE</span>
+            <h2 id="connect-my-life-title">Your life.<br />Working together.</h2>
+            <p>Choose the journeys that matter. Connect My Life helps them respond to change—only with your permission.</p>
+          </Reveal>
+          <Reveal className="cml-visual-wrap"><LifeMap /></Reveal>
+        </div>
       </section>
 
       <section id="journeys" className="journeys-section">

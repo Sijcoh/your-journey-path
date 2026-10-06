@@ -152,7 +152,7 @@ function Index() {
         <div className="hero-copy">
           <div className="eyebrow"><span /> Discover it. Build it. Connect it.</div>
           <h1>Every goal<br />starts a <em>journey.</em></h1>
-          <p>Build Your Journey turns an idea, service or life need into an affordable AI-guided website or app. Every product works on its own. Connect My Life lets each person choose which journeys work together around their health, family, finance, travel and more.</p>
+          <p>Turn any idea, service or life need into an affordable AI-guided website or app. Each works alone. Connect My Life brings the journeys you choose together.</p>
           <div className="hero-actions">
             <a href="#start" className="button-primary">Explore journeys <ArrowRight /></a>
             <a href="#builders" className="button-secondary">Build on the platform</a>
@@ -181,7 +181,7 @@ function Index() {
           <span className="section-number">01 / START WITH NOW</span>
           <p className="story-kicker">One honest starting point.</p>
           <h2>Tell us what<br /><em>matters now.</em></h2>
-          <p>Bring a goal, a problem or a life event. The platform turns it into a useful sequence of questions, evidence, decisions and next steps.</p>
+          <p>Bring a goal, problem or life event. Get clear questions and next steps.</p>
         </Reveal>
         <Reveal className="goal-builder">
           <div className="goal-input-wrap">
@@ -207,11 +207,11 @@ function Index() {
         <Reveal className="map-intro">
           <span className="section-number">02 / CONNECT MY LIFE</span>
           <h2>Many journeys.<br /><em>One life.</em></h2>
-          <div><p>Connect My Life is the optional personal layer. People choose which Journey products and features matter to them, then allow selected information to improve relevant suggestions elsewhere.</p><p>Health may shape travel; family changes may affect finance or housing. Nothing connects without permission, and every connection can be removed.</p></div>
+          <div><p>Choose what matters—health, family, finance, travel and more. Connect selected journeys for smarter suggestions across your life.</p></div>
         </Reveal>
         <Reveal><LifeMap /></Reveal>
         <div className="trust-row">
-          <span><LockKeyhole /> Private by default</span><span><ShieldCheck /> Explicit permission</span><span><Link2 /> Reversible connections</span>
+          <span><LockKeyhole /> Private by default</span><span><ShieldCheck /> Only with permission</span><span><Link2 /> Disconnect anytime</span>
         </div>
       </section>
 
@@ -222,7 +222,7 @@ function Index() {
           <Reveal className="journey-copy">
             <span className="story-number">03 / FOOTBALL</span>
             <h2>The game is only<br />part of the <em>story.</em></h2>
-            <p>Navigate opportunities, development, wellbeing and safeguarding — while supporting the whole family around the player.</p>
+            <p>Opportunities, development, wellbeing and safeguarding. Support for the whole family around the player.</p>
             <a href="#close">Explore Football <ArrowRight /></a>
           </Reveal>
           <span className="story-word">PLAY</span>
@@ -232,7 +232,7 @@ function Index() {
           <Reveal className="journey-copy">
             <span className="story-number">04 / HEALTH</span>
             <h2>Clarity for the<br /><em>next conversation.</em></h2>
-            <p>Turn a confusing health situation into focused questions, organised evidence and safer next steps. It supports decisions; it never replaces a doctor.</p>
+            <p>Focused questions, organised evidence and safer next steps. It supports decisions; it never replaces a doctor.</p>
             <a href="#close">Explore Health <ArrowRight /></a>
           </Reveal>
           <span className="story-word">CLARITY</span>
@@ -242,7 +242,7 @@ function Index() {
           <Reveal className="journey-copy">
             <span className="story-number">05 / LAW</span>
             <h2>Make the complex<br /><em>navigable.</em></h2>
-            <p>Organise a legal problem into a guided route through documents, deadlines and appropriate professional support. It never replaces a lawyer.</p>
+            <p>Documents, deadlines and the right professional support. It never replaces a lawyer.</p>
             <a href="#close">Explore Law <ArrowRight /></a>
           </Reveal>
           <span className="story-word">ORDER</span>
@@ -254,7 +254,7 @@ function Index() {
         <Reveal className="builders-lead">
           <span className="section-number">06 / THE OTHER SIDE OF THE PLATFORM</span>
           <h2>Expertise becomes<br />a <em>Journey product.</em></h2>
-          <p>Journey Studio gives businesses and organisations reusable architecture for quickly creating affordable AI-guided websites and apps—from a focused testbed to a standalone product. Each product keeps its own identity and can offer Connect My Life as an optional user benefit.</p>
+          <p>Reusable architecture for quickly creating affordable AI-guided websites and apps—from a focused testbed to a standalone product.</p>
           <a href="#partner" className="button-primary">Build with Journey Studio <ArrowRight /></a>
         </Reveal>
         <Reveal className="studio-system">
@@ -270,7 +270,7 @@ function Index() {
         <Reveal className="partner-copy">
           <span className="section-number">07 / ALREADY BUILT SOMETHING BRILLIANT?</span>
           <h2>Bring your product.<br /><em>Keep its identity.</em></h2>
-          <p>Existing products can join the Journey ecosystem without losing their identity. With explicit permission, users can connect selected features to Connect My Life and receive more relevant support across different areas of life.</p>
+          <p>Bring an existing product into the Journey ecosystem without losing its identity. Connect My Life remains optional.</p>
         </Reveal>
         <Reveal className="partner-visual">
           <div className="product-tile"><span>YOUR PRODUCT</span><strong>Already built</strong></div>

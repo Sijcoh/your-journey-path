@@ -15,3 +15,4 @@
 - [x] Visually verify desktop and phone; check My Life Map permission and route-builder interactions; do not publish
 - [x] Shorten copy: exact hero/Connect My Life/Studio/partner bodies, three safeguard labels, other descriptions ≤2 short sentences
 - [ ] Full-page cohesion pass: one palette, path motif transitions, standard grid/type/buttons/images, Connect My Life as culmination; check desktop + phone
+- [ ] Redesign Connect My Life section (02): 40/60 image-led split, path Health→Travel→Home, safeguards strip with switch; check desktop + phone

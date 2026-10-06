@@ -195,7 +195,7 @@ function Index() {
           <Reveal className="cml-copy">
             <span className="section-number">02 / CONNECT MY LIFE</span>
             <h2 id="connect-my-life-title">Connect My Life</h2>
-            <p>Choose the journeys that matter. Connect My Life helps them respond to change—only with your permission.</p>
+            <p>Your apps. Your features. One personalised journey—owned by you.</p>
           </Reveal>
           <Reveal className="cml-visual-wrap"><LifeMap /></Reveal>
         </div>

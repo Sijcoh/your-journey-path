@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Build Your Journey — Discover, create and connect AI-led journeys" },
-      { name: "description", content: "Turn a goal, problem or life event into a guided AI-led journey. Discover journeys, build new Journey products and connect them only with permission." },
+      { name: "description", content: "Discover AI-led journeys and create low-cost websites and apps with Journey Studio. Keep Journey products independent or connect them through My Life Map with explicit, reversible permission." },
       { property: "og:title", content: "Build Your Journey" },
       { property: "og:description", content: "The AI-led web and app platform for discovering, creating and connecting life’s journeys." },
       { property: "og:type", content: "website" },
@@ -82,7 +82,7 @@ function LifeMap() {
       <div className="map-orbit orbit-two" />
       <div className="map-core">
         <ShieldCheck />
-        <strong>{connected ? "Connected by you" : "Your Life Map"}</strong>
+        <strong>{connected ? "Connected by you" : "My Life Map"}</strong>
         <span>{connected ? "Permission active" : "Private by default"}</span>
       </div>
       {journeyNodes.map((node) => (
@@ -129,7 +129,7 @@ function Index() {
       <header className="site-header">
         <a href="#top" className="brand" aria-label="Build Your Journey home"><BrandMark /></a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#start">How it works</a><a href="#life-map">Life Map</a><a href="#journeys">Journeys</a><a href="#builders">For builders</a>
+          <a href="#start">How it works</a><a href="#life-map">My Life Map</a><a href="#journeys">Journeys</a><a href="#builders">For builders</a>
         </nav>
         <a href="#close" className="nav-cta">Find your way in <ArrowDownRight /></a>
         <button type="button" className="menu-button" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen} aria-label="Toggle navigation">
@@ -138,7 +138,7 @@ function Index() {
         {menuOpen && (
           <nav className="mobile-nav">
             <a onClick={() => setMenuOpen(false)} href="#start">How it works</a>
-            <a onClick={() => setMenuOpen(false)} href="#life-map">Life Map</a>
+            <a onClick={() => setMenuOpen(false)} href="#life-map">My Life Map</a>
             <a onClick={() => setMenuOpen(false)} href="#journeys">Journeys</a>
             <a onClick={() => setMenuOpen(false)} href="#builders">For builders</a>
           </nav>
@@ -205,9 +205,9 @@ function Index() {
 
       <section id="life-map" className="life-map-section">
         <Reveal className="map-intro">
-          <span className="section-number">02 / YOUR LIFE MAP</span>
+          <span className="section-number">02 / MY LIFE MAP</span>
           <h2>Many journeys.<br /><em>One life.</em></h2>
-          <div><p>Football can stay Football. Health can stay Health. Law can stay Law.</p><p>When a connection helps, you decide what joins up — and you can reverse it.</p></div>
+          <div><p>Football can stay Football. Health can stay Health. Law can stay Law. Each Journey product remains independent.</p><p>My Life Map is optional. Journeys connect only with your explicit permission. You decide what joins up — and you can reverse it.</p></div>
         </Reveal>
         <Reveal><LifeMap /></Reveal>
         <div className="trust-row">
@@ -254,7 +254,7 @@ function Index() {
         <Reveal className="builders-lead">
           <span className="section-number">06 / THE OTHER SIDE OF THE PLATFORM</span>
           <h2>Expertise becomes<br />a <em>Journey product.</em></h2>
-          <p>Journey Studio gives people and organisations the infrastructure to turn deep expertise into responsive AI-led web and app Journey products.</p>
+          <p>Journey Studio gives people and organisations shared architecture for low-cost AI-led website and app creation. Turn deep expertise into a standalone Journey product or a testbed — with My Life Map connections entirely optional.</p>
           <a href="#partner" className="button-primary">Build with Journey Studio <ArrowRight /></a>
         </Reveal>
         <Reveal className="studio-system">
@@ -270,7 +270,7 @@ function Index() {
         <Reveal className="partner-copy">
           <span className="section-number">07 / ALREADY BUILT SOMETHING BRILLIANT?</span>
           <h2>Bring your product.<br /><em>Keep its identity.</em></h2>
-          <p>Existing AI-led web and app products can become discoverable through a trusted home for journeys, then connect to the Life Map only where it adds value — and only with the user’s permission.</p>
+          <p>Existing AI-led web and app products can become discoverable through a trusted home for journeys, then connect to My Life Map only where it adds value — and only with the user’s explicit, reversible permission.</p>
         </Reveal>
         <Reveal className="partner-visual">
           <div className="product-tile"><span>YOUR PRODUCT</span><strong>Already built</strong></div>

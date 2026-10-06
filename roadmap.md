@@ -11,3 +11,5 @@
 - [x] Replace the interim recolour with a genuinely new bright landing-page composition and bespoke imagery
 - [x] Preserve product truth, consent interactions, proof verticals, approved logo and two audience routes
 - [x] Verify the new desktop and mobile experience end to end
+- [ ] Recreate and refine the restored production release faithfully — blocked until its content is accessible; the supplied link requires ChatGPT sign-in
+- [ ] Visually verify the restored version on desktop and phone; preserve interactions and do not publish
